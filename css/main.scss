@@ -1,0 +1,136 @@
+@import "../libs/bootstrap-5.1.0/scss/bootstrap-grid.scss";
+@import "../libs/bootstrap-5.1.0/scss/bootstrap-utilities.scss";
+@import "../libs/fontawesome-free-5.15.4-web/scss/solid.scss";
+@import "../libs/fontawesome-free-5.15.4-web/scss/fontawesome.scss";
+
+$font-color: #eee4e2;
+$font-color-dark: #2e130a;
+$background-color: #121330;
+$accent-color: #fcee21;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $font-color;
+}
+body {
+  background-color: $background-color;
+}
+
+.header {
+  background: linear-gradient(
+    109.38deg,
+    #110828 -38.4%,
+    #285a76 -38.38%,
+    #0e0624 113.47%
+  );
+  &-logo {
+    width: 150px;
+    padding: 20px;
+  }
+  &-img {
+    max-width: 100%;
+  }
+  .nav {
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    &-list {
+      display: flex;
+      li {
+        padding: 20px;
+        margin-left: 30px;
+        list-style: none;
+      }
+    }
+  }
+}
+.heroheader {
+  &-items {
+    display: flex;
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+  }
+}
+.search {
+  &-bar {
+    padding: 5px 8px;
+    border-radius: 100vh;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 300px;
+  }
+  &-button {
+    border-radius: 100vh;
+    width: 100px;
+    background-color: $accent-color;
+  }
+}
+.slide {
+  div {
+    margin: 0 5px;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.demo01 {
+  margin: 0 auto;
+}
+
+.item {
+  width: 30%;
+  margin: 5px;
+  list-style: none;
+}
+
+.item img {
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.main-post {
+  background: $background-color;
+  color: $font-color;
+}
+
+.title-row {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+h3 {
+  margin-top: 100px;
+}
+.post-detail {
+  margin-top: 100px;
+}
+
+.post-detail-photo {
+  margin-top: 50px;
+  img {
+    width: 70%;
+  }
+}
+.place {
+  margin-right: 20px;
+}
+.col {
+  margin-bottom: 30px;
+}
+
+.footer {
+  height: 300px;
+  background-color: $background-color;
+}
