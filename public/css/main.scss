@@ -1,5 +1,6 @@
 $primary: #fcee21;
 @import "../libs/bootstrap-5.1.0/scss/bootstrap.scss";
+@import "../libs/fontawesome-free-5.15.4-web/scss/";
 @import "../libs/fontawesome-free-5.15.4-web/scss/solid.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/fontawesome.scss";
 
@@ -31,6 +32,12 @@ body {
   }
   &-img {
     max-width: 100%;
+  }
+  .nav-item {
+    margin-right: 20px;
+    i {
+      margin-right: 10px;
+    }
   }
 }
 .heroheader {
@@ -111,7 +118,7 @@ body {
       width: 100%;
     }
     p {
-      margin-bottom: 0px;
+      margin-bottom: -30px;
       padding-top: 0px;
     }
   }
@@ -133,9 +140,12 @@ body {
 }
 .grid {
   position: relative;
-  width: 878px;
+  width: 900px;
   max-width: 100%;
   margin: 0 auto;
+}
+.new-title {
+  margin-left: 200px;
 }
 
 .photo-list {

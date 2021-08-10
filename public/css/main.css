@@ -18082,6 +18082,14 @@ body {
   max-width: 100%;
 }
 
+.header .nav-item {
+  margin-right: 20px;
+}
+
+.header .nav-item i {
+  margin-right: 10px;
+}
+
 .heroheader-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18188,9 +18196,13 @@ body {
 
 .grid {
   position: relative;
-  width: 878px;
+  width: 900px;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.new-title {
+  margin-left: 200px;
 }
 
 .photo-list {
