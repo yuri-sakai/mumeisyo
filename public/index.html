@@ -51,7 +51,9 @@
               <img class="heroheader-img header-img" src="./images/top-image.png" alt="header-img" >
               <img class="heroheader-img-sp header-img"src="./images/sp-top-image.png" alt="header-img">
               <div class="heroheader-items">
-                <p><span>名</span>も無い場所に行ってみよう</p>
+                
+                <p><span>名</span>も無い場所に</p>
+                 <p>行ってみよう</p>
               </div>  
             </div>
           </div>
@@ -67,6 +69,7 @@
           <div class="slide">
             <div>
               <img src="./images/test1.jpg" alt="">
+              <p>ここから3km</p>
             </div>
             <div>
               <img src="./images/test2.jpg" alt="">
@@ -87,14 +90,16 @@
           
           
           <img src="" alt="">
-          <p>新着</p>
+          <h2>新着</h2>
           <!-- コンテナ -->
           <div class="grid">
             <!-- アイテム1 -->
             <div class="item">
               <div class="item-content">
                 <!-- カスタムコンテンツ開始 -->
-                <img src="./images/test1.jpg" alt="">
+                <a href="carddetail.html">
+                  <img src="./images/test1.jpg" alt="">
+                </a>
                 <p><i class="fas fa-map-marker-alt"></i>名古屋市千種区</p>
                 <p>「ここで本を読むのが最高です」</p>
                 <!-- カスタムコンテンツ終了 -->
@@ -232,10 +237,12 @@
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
+  variableWidth: true
   });
 
     </script>
     <script>
+
       var grid = new Muuri('.grid');
     </script>
     

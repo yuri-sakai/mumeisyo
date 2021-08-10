@@ -23,7 +23,7 @@ body {
     #0e0624 113.47%
   );
   nav.navbar {
-    background-color: $background-color;
+    background-color: rgba(0, 0, 0, 0);
   }
   &-logo {
     width: 150px;
@@ -49,6 +49,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  .heroheader-items {
+    bottom: 10%;
+    right: 3%;
+  }
   .heroheader-img {
     display: none;
   }
@@ -82,7 +86,8 @@ body {
     margin: 0 5px;
   }
   img {
-    width: 100%;
+    height: 300px;
+    width: auto;
   }
 }
 .text-center {
@@ -166,7 +171,7 @@ body {
   &-catch {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     img {
       width: 10%;
     }
