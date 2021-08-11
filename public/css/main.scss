@@ -1,6 +1,5 @@
 $primary: #fcee21;
 @import "../libs/bootstrap-5.1.0/scss/bootstrap.scss";
-@import "../libs/fontawesome-free-5.15.4-web/scss/";
 @import "../libs/fontawesome-free-5.15.4-web/scss/solid.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/fontawesome.scss";
 
@@ -10,7 +9,12 @@ $background-color: #121330;
 $accent-color: #fcee21;
 
 body {
-  background-color: $background-color;
+  background: linear-gradient(
+    109.38deg,
+    #110828 -38.4%,
+    #285a76 -38.38%,
+    #0e0624 113.47%
+  );
 }
 * {
   color: $font-color;
@@ -118,8 +122,12 @@ body {
       width: 100%;
     }
     p {
-      margin-bottom: -30px;
       padding-top: 0px;
+    }
+    p.map-post {
+      font-size: 0.75rem;
+      padding-top: 5px;
+      margin-bottom: -20px;
     }
   }
 }
@@ -143,9 +151,23 @@ body {
   width: 900px;
   max-width: 100%;
   margin: 0 auto;
+  margin-top: 50px;
 }
-.new-title {
-  margin-left: 200px;
+
+.new-post {
+  &-title {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto;
+    justify-content: center;
+    &-img {
+      width: 70px;
+      padding-bottom: 5px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .photo-list {
@@ -175,7 +197,6 @@ body {
 }
 
 .main-post {
-  background: $background-color;
   color: $font-color;
   margin-top: 100px;
   &-catch {
@@ -220,4 +241,10 @@ h3 {
 .footer {
   height: 300px;
   background-color: $background-color;
+  &-logo {
+    img {
+      margin-top: 200px;
+      width: 150px;
+    }
+  }
 }

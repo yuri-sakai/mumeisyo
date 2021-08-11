@@ -18058,7 +18058,7 @@ readers do not read off random characters that represent icons */
 }
 
 body {
-  background-color: #121330;
+  background: linear-gradient(109.38deg, #110828 -38.4%, #285a76 -38.38%, #0e0624 113.47%);
 }
 
 * {
@@ -18175,8 +18175,13 @@ body {
 }
 
 .item-content p {
-  margin-bottom: 0px;
   padding-top: 0px;
+}
+
+.item-content p.map-post {
+  font-size: 0.75rem;
+  padding-top: 5px;
+  margin-bottom: -20px;
 }
 
 @media (max-width: 877px) {
@@ -18199,10 +18204,29 @@ body {
   width: 900px;
   max-width: 100%;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
-.new-title {
-  margin-left: 200px;
+.new-post-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.new-post-title-img {
+  width: 70px;
+  padding-bottom: 5px;
+}
+
+.new-post-title-img img {
+  width: 100%;
 }
 
 .photo-list {
@@ -18219,7 +18243,6 @@ body {
 }
 
 .main-post {
-  background: #121330;
   color: #eee4e2;
   margin-top: 100px;
 }
@@ -18279,5 +18302,10 @@ h3, .h3 {
 .footer {
   height: 300px;
   background-color: #121330;
+}
+
+.footer-logo img {
+  margin-top: 200px;
+  width: 150px;
 }
 /*# sourceMappingURL=main.css.map */
