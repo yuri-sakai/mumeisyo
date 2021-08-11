@@ -24,6 +24,26 @@
     <body>
         <header class="header container-fluid">
           <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img class="header-logo"src="./images/titlelogo.png" alt="">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" aria-current="page" href="#">post</a>
+                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#"><a class="nav-link" href="#"><i class="fas fa-user-alt"></i>Account</a></a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+
+          <!-- <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">
               <img class="header-logo"src="./images/titlelogo.png" alt="">
             </a>
@@ -44,7 +64,7 @@
                 </li>
               </ul>
             </div>
-          </nav>
+          </nav> -->
 
           <div class="heroheader">
             <div class="relative">
@@ -241,12 +261,11 @@
         <footer class="footer">
           <div class="container">
             <div class="footer-logo"><img src="./images/titlelogo.png" alt="logo"></div>
-            <p>copyright</p>
+            <p>©　2021 mumeisyo.web.app</p>
           </div>
           
         </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <!-- or -->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
@@ -254,19 +273,23 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js" integrity="sha512-oAY57i8MXmaOP7pAylNLnULAM4QLV3uGnvnXVY4zF229/zFzTvG2/5YIgH8iN8oZR2hnbkiDPd4JCJGaH4oG6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.9.5/muuri.min.js" integrity="sha512-OcxD5yMkQtx7+ODJIvypN3ajf/fnpTK1I0+Gmq1O9W8uU16MfTmJ1nBNUJ84WuSBnJmoBSAmgm0ujUikVbRzfQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    $('.slide').slick({
-      slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  variableWidth: true
-  });
+      $('.slide').slick({
+        slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    variableWidth: true
+    });
 
-    </script>
-    <script>imagesLoaded('.grid').on('progress', () => {
-      var grid = new Muuri('.grid');
-    })
+    // imagesLoaded('.grid').on('progress', () => {
+     
+    // })
+
+    var grid = new Muuri('.grid');
+    
     </script>
     
     </body>
