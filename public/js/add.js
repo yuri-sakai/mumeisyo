@@ -1,11 +1,3 @@
-$(".slide").slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  variableWidth: true,
-});
-
 // ↓チュートリアルからコピー
 /**
  * Copyright 2018 Google Inc. All Rights Reserved.
@@ -24,65 +16,23 @@ $(".slide").slick({
  */
 ("use strict");
 
-// Signs-in Friendly Chat.
-function signIn() {
-  alert("test");
-  // TODO 1: Sign in Firebase with credential from the Google user.
-  // Sign into Firebase using popup auth & Google as the identity provider.
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider);
-}
-
-// Signs-out of Friendly Chat.
-function signOut() {
-  // TODO 2: Sign out of Firebase.
-  // Sign out of Firebase.
-  firebase.auth().signOut();
-}
-
-// Initiate firebase auth.
-function initFirebaseAuth() {
-  // TODO 3: Initialize Firebase.
-  firebase.auth().onAuthStateChanged(authStateObserver);
-}
-
-// Returns the signed-in user's profile Pic URL.
-function getProfilePicUrl() {
-  // TODO 4: Return the user's profile pic URL.
-  return (
-    firebase.auth().currentUser.photoURL || "/images/profile_placeholder.png"
-  );
-}
-
-// Returns the signed-in user's display name.
-function getUserName() {
-  // TODO 5: Return the user's display name.
-  return firebase.auth().currentUser.displayName;
-}
-
-// Returns true if a user is signed-in.
-function isUserSignedIn() {
-  // TODO 6: Return true if a user is signed-in.
-  return !!firebase.auth().currentUser;
-}
-
 // Saves a new message on the Firebase DB.
-function saveMessage(messageText) {
-  // TODO 7: Push a new message to Firebase.
-  // Add a new message entry to the database.
-  return firebase
-    .firestore()
-    .collection("messages")
-    .add({
-      name: getUserName(),
-      text: messageText,
-      profilePicUrl: getProfilePicUrl(),
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-    .catch(function (error) {
-      console.error("Error writing new message to database", error);
-    });
-}
+// function saveMessage(messageText) {
+//   // TODO 7: Push a new message to Firebase.
+//   // Add a new message entry to the database.
+//   return firebase
+//     .firestore()
+//     .collection("messages")
+//     .add({
+//       name: getUserName(),
+//       text: messageText,
+//       profilePicUrl: getProfilePicUrl(),
+//       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+//     })
+//     .catch(function (error) {
+//       console.error("Error writing new message to database", error);
+//     });
+// }
 
 // Loads chat messages history and listens for upcoming ones.
 function loadMessages() {
@@ -113,39 +63,6 @@ function loadMessages() {
       }
     });
   });
-}
-function loadMumeisyo() {
-  var query = firebase
-    .firestore()
-    .collection("mumeisyo")
-    .orderBy("timestamp", "desc")
-    .limit(12)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        var data = doc.data();
-        let element = document.getElementById("mumeisyos");
-        element.insertAdjacentHTML(
-          "afterbegin",
-          `
-        <div class="item">
-              <div class="item-content">
-                  <div class="my-custom-content">
-                      <a href="carddetail.html"><img src="${data.imageUrl}"></a>
-                      <p class="map-post"><i class="fas fa-map-marker-alt"></i>名古屋市千種区</p>
-                      <p>${data.text}</p>
-                  </div>
-              </div>
-            </div>
-          `
-        );
-      });
-      imagesLoaded(".grid").on("progress", () => {
-        var grid = new Muuri(".grid");
-      });
-    });
 }
 
 // Saves a new message containing an image in Firebase.
@@ -192,38 +109,28 @@ function saveImageMessage() {
     });
 }
 
-// Saves the messaging device token to the datastore.
-function saveMessagingDeviceToken() {
-  // TODO 10: Save the device token in the realtime datastore
-}
-
-// Requests permissions to show notifications.
-function requestNotificationsPermissions() {
-  // TODO 11: Request permissions to send notifications.
-}
-
 // Triggered when a file is selected via the media picker.
-function onMediaFileSelected(event) {
-  event.preventDefault();
-  var file = event.target.files[0];
+// function onMediaFileSelected(event) {
+//   event.preventDefault();
+//   var file = event.target.files[0];
 
-  // Clear the selection in the file picker input.
-  imageFormElement.reset();
+//   // Clear the selection in the file picker input.
+//   imageFormElement.reset();
 
-  // Check if the file is an image.
-  if (!file.type.match("image.*")) {
-    var data = {
-      message: "You can only share images",
-      timeout: 2000,
-    };
-    signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
-    return;
-  }
-  // Check if the user is signed-in
-  if (checkSignedInWithMessage()) {
-    saveImageMessage(file);
-  }
-}
+//   // Check if the file is an image.
+//   if (!file.type.match("image.*")) {
+//     var data = {
+//       message: "You can only share images",
+//       timeout: 2000,
+//     };
+//     signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
+//     return;
+//   }
+//   // Check if the user is signed-in
+//   if (checkSignedInWithMessage()) {
+//     saveImageMessage(file);
+//   }
+// }
 
 // Triggered when the send new message form is submitted.
 function onMessageFormSubmit(e) {
@@ -239,39 +146,6 @@ function onMessageFormSubmit(e) {
 }
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
-function authStateObserver(user) {
-  if (user) {
-    // User is signed in!
-    // Get the signed-in user's profile pic and name.
-    var profilePicUrl = getProfilePicUrl();
-    var userName = getUserName();
-
-    // Set the user's profile pic and name.
-    userPicElement.style.backgroundImage =
-      "url(" + addSizeToGoogleProfilePic(profilePicUrl) + ")";
-    userNameElement.textContent = userName;
-
-    // Show user's profile and sign-out button.
-    userNameElement.removeAttribute("hidden");
-    userPicElement.removeAttribute("hidden");
-    signOutButtonElement.removeAttribute("hidden");
-
-    // Hide sign-in button.
-    signInButtonElement.setAttribute("hidden", "true");
-
-    // We save the Firebase Messaging Device token and enable notifications.
-    saveMessagingDeviceToken();
-  } else {
-    // User is signed out!
-    // Hide user's profile and sign-out button.
-    userNameElement.setAttribute("hidden", "true");
-    userPicElement.setAttribute("hidden", "true");
-    signOutButtonElement.setAttribute("hidden", "true");
-
-    // Show sign-in button.
-    signInButtonElement.removeAttribute("hidden");
-  }
-}
 
 // Returns true if user is signed-in. Otherwise false and displays a message.
 function checkSignedInWithMessage() {
@@ -435,22 +309,15 @@ var messageFormElement = document.getElementById("mumeisyo-form");
 var messageInputElement = document.getElementById("message");
 var submitButtonElement = document.getElementById("submit");
 var imageButtonElement = document.getElementById("submitImage");
-var imageFormElement = document.getElementById("image-form");
+// var imageFormElement = document.getElementById("image-form");
 var mediaCaptureElement = document.getElementById("mediaCapture1");
-var userPicElement = document.getElementById("user-pic");
-var userNameElement = document.getElementById("user-name");
-var signInButtonElement = document.getElementById("sign-in");
-var signOutButtonElement = document.getElementById("sign-out");
-var signInSnackbarElement = document.getElementById("must-signin-snackbar");
 
 // Saves message on form submit.
-// messageFormElement.addEventListener("submit", saveImageMessage);
-signOutButtonElement.addEventListener("click", signOut);
-signInButtonElement.addEventListener("click", signIn);
+messageFormElement.addEventListener("submit", saveImageMessage);
 
 // Toggle for the button.
-// messageInputElement.addEventListener("keyup", toggleButton);
-// messageInputElement.addEventListener("change", toggleButton);
+messageInputElement.addEventListener("keyup", toggleButton);
+messageInputElement.addEventListener("change", toggleButton);
 
 // Events for image upload.
 // imageButtonElement.addEventListener("click", function (e) {
@@ -460,10 +327,8 @@ signInButtonElement.addEventListener("click", signIn);
 // mediaCaptureElement.addEventListener("change", onMediaFileSelected);
 
 // initialize Firebase
-initFirebaseAuth();
 
 // TODO: Enable Firebase Performance Monitoring.
 
 // We load currently existing chat messages and listen to new ones.
 // loadMessages();
-loadMumeisyo();
