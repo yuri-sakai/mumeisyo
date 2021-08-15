@@ -6,9 +6,6 @@ $(".slide").slick({
   variableWidth: true,
 });
 
-imagesLoaded(".grid").on("progress", () => {
-  var grid = new Muuri(".grid");
-});
 // ↓チュートリアルからコピー
 /**
  * Copyright 2018 Google Inc. All Rights Reserved.
@@ -72,17 +69,127 @@ function isUserSignedIn() {
 // Saves a new message on the Firebase DB.
 function saveMessage(messageText) {
   // TODO 7: Push a new message to Firebase.
+  // Add a new message entry to the database.
+  return firebase
+    .firestore()
+    .collection("messages")
+    .add({
+      name: getUserName(),
+      text: messageText,
+      profilePicUrl: getProfilePicUrl(),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+    .catch(function (error) {
+      console.error("Error writing new message to database", error);
+    });
 }
 
 // Loads chat messages history and listens for upcoming ones.
 function loadMessages() {
   // TODO 8: Load and listens for new messages.
+  // Create the query to load the last 12 messages and listen for new ones.
+  var query = firebase
+    .firestore()
+    .collection("mumeisyo")
+    .orderBy("timestamp", "desc")
+    .limit(12);
+
+  // Start listening to the query.
+  query.onSnapshot(function (snapshot) {
+    snapshot.docChanges().forEach(function (change) {
+      if (change.type === "removed") {
+        deleteMessage(change.doc.id);
+      } else {
+        var mumeisyo = change.doc.data();
+        console.log(mumeisyo);
+        displayMessage(
+          change.doc.id,
+          mumeisyo.timestamp,
+          mumeisyo.name,
+          mumeisyo.text,
+          mumeisyo.profilePicUrl,
+          mumeisyo.imageUrl
+        );
+      }
+    });
+  });
+}
+function loadMumeisyo() {
+  var query = firebase
+    .firestore()
+    .collection("mumeisyo")
+    .orderBy("timestamp", "desc")
+    .limit(12)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        var data = doc.data();
+        let element = document.getElementById("mumeisyos");
+        element.insertAdjacentHTML(
+          "afterbegin",
+          `
+        <div class="item">
+              <div class="item-content">
+                  <div class="my-custom-content">
+                      <a href="carddetail.html"><img src="${data.imageUrl}"></a>
+                      <p class="map-post"><i class="fas fa-map-marker-alt"></i>名古屋市千種区</p>
+                      <p>${data.text}</p>
+                  </div>
+              </div>
+            </div>
+          `
+        );
+      });
+      imagesLoaded(".grid").on("progress", () => {
+        var grid = new Muuri(".grid");
+      });
+    });
 }
 
 // Saves a new message containing an image in Firebase.
 // This first saves the image in Firebase storage.
-function saveImageMessage(file) {
+// Saves a new message containing an image in Firebase.
+// This first saves the image in Firebase storage.
+function saveImageMessage() {
+  var file = mediaCaptureElement.files[0];
   // TODO 9: Posts a new image as a message.
+  firebase
+    .firestore()
+    .collection("mumeisyo")
+    .add({
+      name: getUserName(),
+      imageUrl: LOADING_IMAGE_URL,
+      text: messageInputElement.value,
+      profilePicUrl: getProfilePicUrl(),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+    .then(function (messageRef) {
+      // 2 - Upload the image to Cloud Storage.
+      var filePath =
+        firebase.auth().currentUser.uid + "/" + messageRef.id + "/" + file.name;
+      return firebase
+        .storage()
+        .ref(filePath)
+        .put(file)
+        .then(function (fileSnapshot) {
+          // 3 - Generate a public URL for the file.
+          return fileSnapshot.ref.getDownloadURL().then((url) => {
+            // 4 - Update the chat message placeholder with the image's URL.
+            return messageRef.update({
+              imageUrl: url,
+              storageUri: fileSnapshot.metadata.fullPath,
+            });
+          });
+        });
+    })
+    .catch(function (error) {
+      console.error(
+        "There was an error uploading a file to Cloud Storage:",
+        error
+      );
+    });
 }
 
 // Saves the messaging device token to the datastore.
@@ -185,7 +292,6 @@ function checkSignedInWithMessage() {
 // Resets the given MaterialTextField.
 function resetMaterialTextfield(element) {
   element.value = "";
-  element.parentNode.MaterialTextfield.boundUpdateClassesHandler();
 }
 
 // Template for messages.
@@ -275,7 +381,8 @@ function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
     messageElement.textContent = text;
     // Replace all line breaks by <br>.
     messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, "<br>");
-  } else if (imageUrl) {
+  }
+  if (imageUrl) {
     // If the message is an image.
     var image = document.createElement("img");
     image.addEventListener("load", function () {
@@ -296,6 +403,7 @@ function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
 // Enables or disables the submit button depending on the values of the input
 // fields.
 function toggleButton() {
+  console.log(messageInputElement.value);
   if (messageInputElement.value) {
     submitButtonElement.removeAttribute("disabled");
   } else {
@@ -322,13 +430,13 @@ function checkSetup() {
 checkSetup();
 
 // Shortcuts to DOM Elements.
-// var messageListElement = document.getElementById("messages");
-// var messageFormElement = document.getElementById("message-form");
-// var messageInputElement = document.getElementById("message");
-// var submitButtonElement = document.getElementById("submit");
-// var imageButtonElement = document.getElementById("submitImage");
-// var imageFormElement = document.getElementById("image-form");
-// var mediaCaptureElement = document.getElementById("mediaCapture");
+var messageListElement = document.getElementById("messages");
+var messageFormElement = document.getElementById("mumeisyo-form");
+var messageInputElement = document.getElementById("message");
+var submitButtonElement = document.getElementById("submit");
+var imageButtonElement = document.getElementById("submitImage");
+var imageFormElement = document.getElementById("image-form");
+var mediaCaptureElement = document.getElementById("mediaCapture1");
 var userPicElement = document.getElementById("user-pic");
 var userNameElement = document.getElementById("user-name");
 var signInButtonElement = document.getElementById("sign-in");
@@ -336,7 +444,7 @@ var signOutButtonElement = document.getElementById("sign-out");
 var signInSnackbarElement = document.getElementById("must-signin-snackbar");
 
 // Saves message on form submit.
-// messageFormElement.addEventListener("submit", onMessageFormSubmit);
+// messageFormElement.addEventListener("submit", saveImageMessage);
 signOutButtonElement.addEventListener("click", signOut);
 signInButtonElement.addEventListener("click", signIn);
 
@@ -357,4 +465,5 @@ initFirebaseAuth();
 // TODO: Enable Firebase Performance Monitoring.
 
 // We load currently existing chat messages and listen to new ones.
-loadMessages();
+// loadMessages();
+loadMumeisyo();
