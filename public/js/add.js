@@ -87,6 +87,18 @@ function saveImageMessage(event) {
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     })
     .then(function (messageRef) {
+      resetMaterialTextfield(messageInputElement);
+      resetMaterialTextfield(messageFormElement);
+      resetMaterialTextfield(nameInputElement);
+      resetMaterialTextfield(placeInputElement);
+      resetMaterialTextfield(tagInputElement);
+      submitButtonElement.insertAdjacentHTML(
+        "afterbegin",
+        `
+          <p>投稿完了</p>
+          `
+      );
+
       // 2 - Upload the image to Cloud Storage.
       var filePath =
         firebase.auth().currentUser.uid + "/" + messageRef.id + "/" + file.name;
@@ -98,6 +110,7 @@ function saveImageMessage(event) {
           // 3 - Generate a public URL for the file.
           return fileSnapshot.ref.getDownloadURL().then((url) => {
             // 4 - Update the chat message placeholder with the image's URL.
+
             return messageRef.update({
               imageUrl: url,
               storageUri: fileSnapshot.metadata.fullPath,

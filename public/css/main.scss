@@ -21,10 +21,6 @@ body {
   color: $font-color;
 }
 
-.slick-active {
-  color: $accent-color;
-}
-
 .header {
   background: linear-gradient(
     109.38deg,
@@ -228,6 +224,25 @@ body {
       width: 10%;
     }
   }
+}
+
+.user-pic {
+  top: -3px;
+  position: relative;
+  display: inline-block;
+  background-image: url("/images/profile_placeholder.png");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  border-radius: 20px;
+}
+.user-name {
+  font-size: 16px;
+  line-height: 36px;
+  padding-right: 10px;
+  padding-left: 20px;
+  color: $accent-color;
 }
 
 .text-center {

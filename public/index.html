@@ -25,7 +25,7 @@
         <!-- App Styling -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
         <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/login.css" />
+        <!-- <link rel="stylesheet" href="./css/login.css" /> -->
     </head>
 
     <body>
@@ -39,22 +39,19 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
                 <div class="navbar-nav ms-auto">
                   <a class="nav-link active" aria-current="page" href="./post.html">post</a>
-                  <a class="nav-link" href="#">About</a>
-                  <a  id="user-container">
-                    <div  hidden id="user-pic"></div>
-                    <a hidden id="user-name"></a>
-                    <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                  <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
+                  <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
+
+                  <a class="user-pic"  hidden id="user-pic" ></a>
+                  <a hidden id="user-name" class="nav-link active user-name"></a>
+                    <!-- <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
                       Sign-out
-                    </button>
-                    <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                    </button> -->
+                    <!-- <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
                       <i class="material-icons">account_circle</i>Sign-in with Google
-                    </button>
+                    </button> -->
                   </a>
                   
                 </div>
@@ -68,31 +65,6 @@
         <button class="mdl-snackbar__action" type="button"></button>
       </div>
 
-
-
-          <!-- <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">
-              <img class="header-logo"src="./images/titlelogo.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">post <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fas fa-user-alt"></i>Account</a>
-                </li>
-              </ul>
-            </div>
-          </nav> -->
-
           <div class="heroheader">
             <div class="relative">
               <img class="heroheader-img header-img" src="./images/heroheader-overlay.png" alt="header-img" >
@@ -104,9 +76,9 @@
               </div>  
             </div>
           </div>
-          <!-- <div><input class="search-bar" type="text" placeholder="気になるワードを検索"></div>
-                <button type="button" class="btn btn-primary">search</button> -->
         </header>
+
+        
         
         <main class="container main-post">
           <p class="text-center">おすすめの無名所</p>
@@ -188,7 +160,7 @@
     <script src="/__/firebase/8.6.7/firebase-messaging.js"></script>
     <script src="/__/firebase/8.6.7/firebase-firestore.js"></script>
     <script src="/__/firebase/8.6.7/firebase-performance.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
     <script src="./js/show.js"></script>
     <script src="./js/auth.js"></script>
     
