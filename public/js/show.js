@@ -38,9 +38,9 @@ function loadMumeisyo() {
             </div>
           `
         );
-      });
-      imagesLoaded(".grid").on("progress", () => {
-        var grid = new Muuri(".grid");
+        imagesLoaded(".grid").on("progress", () => {
+          var grid = new Muuri(".grid");
+        });
       });
     });
 }
