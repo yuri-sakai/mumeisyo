@@ -221,9 +221,7 @@ body {
 }
 
 .title-row {
-  display: flex;
   margin-top: 100px;
-  justify-content: space-between;
 }
 h3 {
   margin-top: 100px;
@@ -250,6 +248,10 @@ h3 {
   img {
     width: 100%;
   }
+}
+.title-account {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .title-icon {

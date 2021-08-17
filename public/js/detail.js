@@ -17,15 +17,19 @@ function detail_mumeisyo() {
         <div class="post-detail-photo text-center">
         <img  src="${data.imageUrl}" alt="main-image">
         </div>
-      <div class="title-row">
-        <h2>${data.mumeisyoName}</h2>
-        <div class="title-icon">
-          <img  src="${data.profilePicUrl}" alt="">
+      <div class="row title-row">
+        <div class="col-md-6 offset-md-2">
+          <h2>${data.mumeisyoName}</h2>
+          <p><i class="fas fa-map-marker-alt"></i>${data.mumeisyoPlace}</p>
         </div>
-        <p>by ${data.name}</p>
-        <p>place ${data.mumeisyoPlace}</p>
+        <div class="col-md-3">
+          <p class="title-icon"><img  src="${data.profilePicUrl}" alt=""></p>
+          <p>by ${data.name}</p>
+        </div>
       </div>
-      <p>何人の人が保存しました</p>
+
+      <div class="row">
+        <div class="col-md-6 offset-md-2">
           <p>${data.text}</p>
           <h3>TAGS</h3>
           <button type="button" class="btn btn-primary">${data.mumeisyoTag}</button>
@@ -35,6 +39,11 @@ function detail_mumeisyo() {
           <p></p>
           <p></p>
           <p></p>
+        </div>
+
+      </div>
+
+         
         `
       );
     });
