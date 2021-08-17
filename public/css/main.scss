@@ -21,6 +21,10 @@ body {
   color: $font-color;
 }
 
+.slick-active {
+  color: $accent-color;
+}
+
 .header {
   background: linear-gradient(
     109.38deg,
@@ -94,6 +98,9 @@ body {
   }
 }
 .slide {
+  &-width {
+    width: 300px;
+  }
   div {
     margin: 0 5px;
   }
@@ -102,6 +109,13 @@ body {
     width: auto;
   }
 }
+
+@media (min-width: 641px) {
+  .slide-width {
+    width: 250px;
+  }
+}
+
 .text-center {
   text-align: center;
 }

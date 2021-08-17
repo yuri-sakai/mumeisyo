@@ -4,6 +4,11 @@ $(".slide").slick({
   autoplay: true,
   autoplaySpeed: 2000,
   variableWidth: true,
+  arrows: false,
+  dots: true,
+  infinite: true,
+  centerMode: true,
+  centerPadding: "0",
 });
 
 function loadMumeisyo() {
