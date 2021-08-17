@@ -33,8 +33,6 @@ function detail_mumeisyo() {
           <p>${data.text}</p>
           <h3>TAGS</h3>
           <button type="button" class="btn btn-primary">${data.mumeisyoTag}</button>
-          <h3>手がかり</h3>
-          <p>map</p>
           <p style="height:300px"></p>
           <p></p>
           <p></p>

@@ -10,18 +10,14 @@ $background-color: #121330;
 $accent-color: #fcee21;
 
 body {
-  background: linear-gradient(
-    109.38deg,
-    #110828 -38.4%,
-    #285a76 -38.38%,
-    #0e0624 113.47%
-  );
+  background: $background-color;
 }
 * {
   color: $font-color;
 }
 
 .header {
+  margin-top: 100px;
   background: linear-gradient(
     109.38deg,
     #110828 -38.4%,
@@ -45,6 +41,7 @@ body {
     }
   }
 }
+
 .heroheader {
   &-items {
     display: flex;
