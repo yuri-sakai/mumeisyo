@@ -80,14 +80,30 @@
 
     <div class="container">
         <form id="mumeisyo-form" action="#">
+            
             <div class="mb-3">
-                <label for="message" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <label for="mumeisyoName" class="form-label">無名所の名前</label>
+                <input type="title" class="form-control" id="mumeisyoName" placeholder="無名所のタイトル">
+            </div>
+            <div class="mb-3">
+                <label for="mumeisyoPlace" class="form-label">無名所の場所</label>
+                <input type="area" class="form-control" id="mumeisyoPlace" placeholder="場所">
             </div>
             <div class="input-group mb-3">
-                <label class="input-group-text" for="mediaCapture1">Upload</label>
+                <label class="input-group-text" for="mediaCapture1">画像</label>
                 <input type="file" class="form-control" id="mediaCapture1">
-              </div>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">説明</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <label for="mumeisyoTag" class="form-label">Tag</label>
+            <input class="form-control" list="datalistOptions" id="mumeisyoTag" placeholder="tagを選択">
+            <datalist id="datalistOptions">
+            <option value="風景">
+            <option value="隠れ家">
+            <option value="眺めがいい">
+            </datalist>
             <button id="submit" disabled type="submit" class="btn btn-primary">submit</button>
         </form> 
     </div>

@@ -26,8 +26,8 @@ function loadMumeisyo() {
               <div class="item-content">
                   <div class="my-custom-content">
                       <a href="carddetail.html?photoid=${doc.id}"><img src="${data.imageUrl}"></a>
-                      <p class="map-post"><i class="fas fa-map-marker-alt"></i>名古屋市千種区</p>
-                      <p>${data.text}</p>
+                      <p class="map-post"><i class="fas fa-map-marker-alt"></i>${data.mumeisyoPlace}</p>
+                      <p>${data.mumeisyoName}</p>
                   </div>
               </div>
             </div>

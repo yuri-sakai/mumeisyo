@@ -69,7 +69,8 @@ function loadMessages() {
 // This first saves the image in Firebase storage.
 // Saves a new message containing an image in Firebase.
 // This first saves the image in Firebase storage.
-function saveImageMessage() {
+function saveImageMessage(event) {
+  event.preventDefault();
   var file = mediaCaptureElement.files[0];
   // TODO 9: Posts a new image as a message.
   firebase
@@ -80,6 +81,9 @@ function saveImageMessage() {
       imageUrl: LOADING_IMAGE_URL,
       text: messageInputElement.value,
       profilePicUrl: getProfilePicUrl(),
+      mumeisyoName: nameInputElement.value,
+      mumeisyoPlace: placeInputElement.value,
+      mumeisyoTag: tagInputElement.value,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     })
     .then(function (messageRef) {
@@ -306,7 +310,11 @@ checkSetup();
 // Shortcuts to DOM Elements.
 var messageListElement = document.getElementById("messages");
 var messageFormElement = document.getElementById("mumeisyo-form");
+var nameInputElement = document.getElementById("mumeisyoName");
+var placeInputElement = document.getElementById("mumeisyoPlace");
+var tagInputElement = document.getElementById("mumeisyoTag");
 var messageInputElement = document.getElementById("message");
+
 var submitButtonElement = document.getElementById("submit");
 var imageButtonElement = document.getElementById("submitImage");
 // var imageFormElement = document.getElementById("image-form");
