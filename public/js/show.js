@@ -70,5 +70,16 @@ function loadRecomend() {
     });
 }
 
+$(function () {
+  var rotate = function (rotateLogo, angle) {
+    rotateLogo.css({
+      transform: "rotate(" + angle + "deg)",
+    });
+  };
+  $(window).scroll(function () {
+    rotate($(".rotateLogo"), $(window).scrollTop() * 0.2);
+  });
+});
+
 loadRecomend();
 loadMumeisyo();

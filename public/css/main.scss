@@ -122,6 +122,11 @@ body {
 
 .page-section {
   padding: 50px 0;
+  .rotateLogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 }
 
 .section-title {
@@ -260,7 +265,7 @@ body {
   &-catch {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     img {
       width: 10%;
     }
