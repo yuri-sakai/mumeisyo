@@ -1,4 +1,4 @@
-$primary: #fcee21;
+$primary: darken(#fcee21, 20%);
 $btn-link-hover-color: #2e130a;
 $btn-link-color: #121330;
 $form-label-margin-bottom: 1rem;
@@ -24,6 +24,14 @@ body {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     padding: 0 20px;
+
+    .btn {
+      color: $btn-link-color;
+
+      &:hover {
+        color: $btn-link-hover-color;
+      }
+    }
 
     .user-pic {
       width: 25px;
@@ -55,6 +63,7 @@ body {
 .heroheader {
   margin-top: -100px;
   position: relative;
+
   .heroheader-catch {
     position: absolute;
     text-align: right;
@@ -72,6 +81,9 @@ body {
 
 @media (max-width: 640px) {
   .heroheader {
+    .heroheader-img-sp {
+      margin-top: 100px;
+    }
     .heroheader-catch {
       font-size: 1em;
       right: 15px;
@@ -201,6 +213,13 @@ body {
       }
     }
   }
+}
+
+.post-button-sticky {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100000;
 }
 
 .post-area {
