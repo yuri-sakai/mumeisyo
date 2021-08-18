@@ -1,138 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <title>無名所</title>
-        <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021、無名、名所、無名所" />
-        <meta name="description" content="近くの無名の名所をみつけよう" />
-        <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>無名所</title>
+    <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021、無名、名所、無名所" />
+    <meta name="description" content="近くの無名の名所をみつけよう" />
 
-        <!-- Bootstrap CSS -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link rel="stylesheet" href="./libs/slick-1.8.1/slick/slick-theme.css">
-         <!-- Material Design Lite -->
-        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="./libs/slick-1.8.1/slick/slick-theme.css">
 
-        <!-- App Styling -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <link rel="stylesheet" href="./css/main.css" />
-        <!-- <link rel="stylesheet" href="./css/login.css" /> -->
-    </head>
+    <!-- App Styling -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
 
-    <body>
-        <header class="header">
-          <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">
-              <img class="header-logo"src="./images/titlelogo.png" alt="">
+  <body>
+    <header class="header">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img class="header-logo"src="./images/titlelogo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html">
+              <i class="fas fa-camera me-2"></i>post
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ms-auto">
-                <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html">
-                  <i class="fas fa-camera me-2"></i>post
-                </a>
-                <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
-                <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
+            <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
+            <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
 
-                <span class="navbar-text">
-                  <a class="user-pic" hidden id="user-pic" ></a>
-                  <a hidden id="user-name" class="user-name"></a>
-                </span>
+            <span class="navbar-text">
+              <a class="user-pic" hidden id="user-pic" ></a>
+              <a hidden id="user-name" class="user-name"></a>
+            </span>
 
-              </div>
-            </div>
-          </nav>
-
-      <!-- <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
-        <div class="mdl-snackbar__text"></div>
-        <button class="mdl-snackbar__action" type="button"></button>
-      </div> -->
-
-          <div class="heroheader">
-              <img class="heroheader-img header-img" src="./images/heroheader-overlay.png" alt="header-img" >
-              <img class="heroheader-img-sp header-img"src="./images/sp-top-image.png" alt="header-img">
-              <p class="heroheader-catch"><span>名</span>も無い場所に行ってみよう</p>
           </div>
-        </header>
+        </div>
+      </nav>
 
-        
-        
-        <main class="container main-post">
-          <section class="page-section">
-            <h2 class="text-center section-title">おすすめの無名所</h2>
-            <div  class="main-post-catch">
-              <img src="./images/img-searching.png" alt="">
-            </div>
-            <div id="recomendation" class="slide">
-              <!-- <div>
-                <img src="./images/test1.jpg" alt="">
-                <p>ここから3km</p>
-              </div>
-              <div>
-                <img src="./images/test2.jpg" alt="">
-                <p>ここから4.5km</p>
-              </div>
-              <div>
-                <img src="./images/test3.jpg" alt="">
-                <p>ここから3km</p>
-              </div>
-              <div>
-                <img src="./images/test4.jpg" alt="">
-              </div>
-              <div>
-                <img src="./images/test5.jpg" alt="">
-              </div>
-              <div>
-                <img src="./images/test5.jpg" alt="">
-              </div> -->
-            </div>
-          </section>
-          
-          <section class="page-section">
-            <div class="new-post">
-              <div class="new-post-title">
-                <h2 class="section-title">新着</h2>
-                <div class="new-post-title-img"><img src="./images/search-button@4x.png" alt="search"></div>
-              </div>
-            </div>
-          <!-- コンテナ -->
-            <div id="mumeisyos" class="grid"></div>
-          </section>
-          
-          <!-- <div class="wrap">
-            <ul class="photo-list js-photo-list" >
-              <li class="item js-item">
-                <img src="./images/test1.jpg">
-                <i class="fas fa-map-marker-alt">itemplace</i>
-                <p>「setumei」</p>
-              </li>
-              <li class="item js-item"><a href="carddetail.html"><img src="./images/test2.jpg"></a></li>
-              <li class="item js-item"><img src="./images/test3.jpg"></li>
-              <li class="item js-item"><img src="./images/test4.jpg"></li>
-              <li class="item js-item"><img src="./images/test5.jpg"></li>
-              <li class="item js-item"><img src="./images/test6.jpg"></li>
-            </ul>
-          </div> -->
-          
-        </main>
-        <footer class="footer">
-          <div class="container">
-            <div class="footer-logo"><img src="./images/titlelogo.png" alt="logo"></div>
-            <p>©　2021 mumeisyo.web.app</p>
+      <div class="heroheader">
+          <img class="heroheader-img header-img" src="./images/heroheader-overlay.png" alt="header-img" >
+          <img class="heroheader-img-sp header-img"src="./images/sp-top-image.png" alt="header-img">
+          <p class="heroheader-catch"><span>名</span>も無い場所に行ってみよう</p>
+      </div>
+    </header>
+      
+    <main class="container main-post">
+      <section class="page-section">
+        <h2 class="text-center section-title">おすすめの無名所</h2>
+        <div  class="main-post-catch">
+          <img src="./images/img-searching.png" alt="">
+        </div>
+        <div id="recomendation" class="slide"></div>
+      </section>
+      
+      <section class="page-section">
+        <div class="new-post">
+          <div class="new-post-title">
+            <h2 class="section-title">新着</h2>
+            <div class="new-post-title-img"><img src="./images/search-button@4x.png" alt="search"></div>
           </div>
-          
-        </footer>
+        </div>
+
+        <!-- コンテナ -->
+        <div id="mumeisyos" class="grid"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-logo"><img src="./images/titlelogo.png" alt="logo"></div>
+        <p>©　2021 mumeisyo.web.app</p>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <!-- or -->
@@ -151,6 +95,5 @@
     <script src="/__/firebase/init.js?useEmulator=true"></script>
     <script src="./js/show.js"></script>
     <script src="./js/auth.js"></script>
-    
-    </body>
+  </body>
 </html>
