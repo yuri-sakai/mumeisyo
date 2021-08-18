@@ -9,7 +9,7 @@
         <title>無名所</title>
         <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021、無名、名所、無名所" />
         <meta name="description" content="近くの無名の名所をみつけよう" />
-        <link rel="stylesheet" href="css/normalize.css" />
+        <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,9 +18,9 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="stylesheet" href="./libs/slick-1.8.1/slick/slick-theme.css">
          <!-- Material Design Lite -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
 
         <!-- App Styling -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -29,99 +29,91 @@
     </head>
 
     <body>
-        <header class="header container-fluid">
+        <header class="header">
           <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img class="header-logo"src="./images/titlelogo.png" alt="">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                  <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html"><i class="fas fa-camera"></i>post</a>
-                  <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
-                  <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
+            <a class="navbar-brand" href="#">
+              <img class="header-logo"src="./images/titlelogo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html">
+                  <i class="fas fa-camera"></i>post
+                </a>
+                <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
+                <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
 
-                  <a class="user-pic"  hidden id="user-pic" ></a>
-                  <a hidden id="user-name" class="nav-link active user-name"></a>
-                    <!-- <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                      Sign-out
-                    </button> -->
-                    <!-- <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                      <i class="material-icons">account_circle</i>Sign-in with Google
-                    </button> -->
-                  </a>
-                  
-                </div>
-                
+                <a class="user-pic"  hidden id="user-pic" ></a>
+                <a hidden id="user-name" class="nav-link active user-name"></a>
+                  <!-- <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                    Sign-out
+                  </button> -->
+                  <!-- <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                    <i class="material-icons">account_circle</i>Sign-in with Google
+                  </button> -->
+                </a>
               </div>
             </div>
           </nav>
 
-      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+      <!-- <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
-      </div>
+      </div> -->
 
           <div class="heroheader">
-            <div class="relative">
               <img class="heroheader-img header-img" src="./images/heroheader-overlay.png" alt="header-img" >
               <img class="heroheader-img-sp header-img"src="./images/sp-top-image.png" alt="header-img">
-              <div class="heroheader-items">
-                
-                <p><span>名</span>も無い場所に</p>
-                 <p>行ってみよう</p>
-              </div>  
-            </div>
+              <p class="heroheader-catch"><span>名</span>も無い場所に行ってみよう</p>
           </div>
         </header>
 
         
         
         <main class="container main-post">
-          <p class="text-center">おすすめの無名所</p>
-          <div  class="main-post-catch">
-            <img src="./images/img-searching.png" alt="">
-          </div>
-          <div id="recomendation" class="slide slide-width">
-            <!-- <div>
-              <img src="./images/test1.jpg" alt="">
-              <p>ここから3km</p>
+          <section class="page-section">
+            <h2 class="text-center section-title">おすすめの無名所</h2>
+            <div  class="main-post-catch">
+              <img src="./images/img-searching.png" alt="">
             </div>
-            <div>
-              <img src="./images/test2.jpg" alt="">
-              <p>ここから4.5km</p>
+            <div id="recomendation" class="slide">
+              <!-- <div>
+                <img src="./images/test1.jpg" alt="">
+                <p>ここから3km</p>
+              </div>
+              <div>
+                <img src="./images/test2.jpg" alt="">
+                <p>ここから4.5km</p>
+              </div>
+              <div>
+                <img src="./images/test3.jpg" alt="">
+                <p>ここから3km</p>
+              </div>
+              <div>
+                <img src="./images/test4.jpg" alt="">
+              </div>
+              <div>
+                <img src="./images/test5.jpg" alt="">
+              </div>
+              <div>
+                <img src="./images/test5.jpg" alt="">
+              </div> -->
             </div>
-            <div>
-              <img src="./images/test3.jpg" alt="">
-              <p>ここから3km</p>
-            </div>
-            <div>
-              <img src="./images/test4.jpg" alt="">
-            </div>
-            <div>
-              <img src="./images/test5.jpg" alt="">
-            </div>
-            <div>
-              <img src="./images/test5.jpg" alt="">
-            </div> -->
-          </div>
+          </section>
           
-          
-          
-          <div class="new-post">
-            <div  class="new-post-title">
-              <h3>新着</h3>
-              <div class="new-post-title-img"><img src="./images/search-button@4x.png" alt="search"></div>
+          <section class="page-section">
+            <div class="new-post">
+              <div class="new-post-title">
+                <h2 class="section-title">新着</h2>
+                <div class="new-post-title-img"><img src="./images/search-button@4x.png" alt="search"></div>
+              </div>
             </div>
-          </div>
-            
           <!-- コンテナ -->
-          <div id="mumeisyos" class="grid">
-
-          </div>　
+            <div id="mumeisyos" class="grid"></div>
+          </section>
+          
           <!-- <div class="wrap">
             <ul class="photo-list js-photo-list" >
               <li class="item js-item">
