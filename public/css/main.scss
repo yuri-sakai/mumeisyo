@@ -12,7 +12,7 @@ $background-color: #121330;
 $accent-color: #fcee21;
 
 body {
-  background: $background-color;
+  background-color: $background-color;
 }
 * {
   color: $font-color;
@@ -20,12 +20,7 @@ body {
 
 .header {
   margin-top: 100px;
-  background: linear-gradient(
-    109.38deg,
-    #110828 -38.4%,
-    #285a76 -38.38%,
-    #0e0624 113.47%
-  );
+
   nav.navbar {
     background-color: rgba(0, 0, 0, 0);
   }
