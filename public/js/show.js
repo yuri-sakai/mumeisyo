@@ -8,7 +8,6 @@ function loadMumeisyo() {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
         var data = doc.data();
         let element = document.getElementById("mumeisyos");
         element.insertAdjacentHTML(
@@ -26,7 +25,7 @@ function loadMumeisyo() {
           `
         );
       });
-      imagesLoaded(".grid").on("progress", () => {
+      $(".grid").imagesLoaded({ background: true }, function () {
         var grid = new Muuri(".grid");
       });
     });
@@ -42,7 +41,6 @@ function loadRecomend() {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
         var data = doc.data();
         let element = document.getElementById("recomendation");
         element.insertAdjacentHTML(
