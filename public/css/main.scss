@@ -70,7 +70,7 @@ body {
     text-align: right;
     bottom: 20%;
     right: 10%;
-    font-size: 2em;
+    font-size: 2.3em;
     font-family: "Potta One", cursive;
     span {
       color: $accent-color;
@@ -97,6 +97,9 @@ body {
 }
 @media (min-width: 641px) {
   .heroheader {
+    &-catch {
+      font-size: 2em;
+    }
     .heroheader-img-sp {
       display: none;
     }
