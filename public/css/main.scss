@@ -20,8 +20,22 @@ body {
   margin-top: 100px;
 
   nav.navbar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(darken($background-color, 3%), 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     padding: 0 20px;
+
+    .user-pic {
+      width: 25px;
+      height: 25px;
+      background-size: 25px;
+      vertical-align: middle;
+      padding: 0;
+      margin-top: 5px;
+    }
+    .user-name {
+      display: none;
+    }
   }
   &-logo {
     width: 150px;
