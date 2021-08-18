@@ -5,6 +5,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -18122,6 +18123,7 @@ body {
   bottom: 20%;
   right: 10%;
   font-size: 2em;
+  font-family: "Potta One", cursive;
 }
 
 .heroheader .heroheader-catch span {
@@ -18182,6 +18184,10 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: "Potta One", cursive;
 }
 
 .slide-width {
@@ -18323,7 +18329,7 @@ body {
 }
 
 .main-post-catch img {
-  width: 10%;
+  width: 30%;
 }
 
 .user-pic {

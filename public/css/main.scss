@@ -5,6 +5,7 @@ $form-label-margin-bottom: 1rem;
 @import "../libs/bootstrap-5.1.0/scss/bootstrap.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/solid.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/fontawesome.scss";
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 
 $font-color: #eee4e2;
 $font-color-dark: #2e130a;
@@ -70,6 +71,7 @@ body {
     bottom: 20%;
     right: 10%;
     font-size: 2em;
+    font-family: "Potta One", cursive;
     span {
       color: $accent-color;
     }
@@ -130,6 +132,7 @@ body {
 }
 
 .section-title {
+  font-family: "Potta One", cursive;
 }
 
 .slide {
@@ -267,7 +270,7 @@ body {
     justify-content: center;
     margin-bottom: 0px;
     img {
-      width: 10%;
+      width: 30%;
     }
   }
 }
