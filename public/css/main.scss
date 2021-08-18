@@ -58,9 +58,8 @@ body {
   .heroheader-catch {
     position: absolute;
     text-align: right;
-    padding-right: 15px;
     bottom: 20%;
-    right: 0;
+    right: 10%;
     font-size: 2em;
     span {
       color: $accent-color;
@@ -75,6 +74,7 @@ body {
   .heroheader {
     .heroheader-catch {
       font-size: 1em;
+      right: 15px;
     }
     .heroheader-img {
       display: none;
