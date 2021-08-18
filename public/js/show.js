@@ -49,7 +49,9 @@ function loadRecomend() {
           "afterbegin",
           `
           <div>
-            <img src="${data.imageUrl}" alt="">
+            <a href="carddetail.html?photoid=${doc.id}"">
+              <img src="${data.imageUrl}" alt="">
+            </a>
             <p>ここから3km</p>
           </div>
           `
