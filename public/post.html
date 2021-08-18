@@ -1,78 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <title>無名所</title>
-        <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021、無名、名所、無名所" />
-        <meta name="description" content="近くの無名の名所をみつけよう" />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>無名所</title>
+    <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021、無名、名所、無名所" />
+    <meta name="description" content="近くの無名の名所をみつけよう" />
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link rel="stylesheet" href="./libs/slick-1.8.1/slick/slick-theme.css">
-         <!-- Material Design Lite -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="./libs/slick-1.8.1/slick/slick-theme.css">
 
-        <!-- App Styling -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/login.css" />
-    </head>
-<body>
-    <header class="header container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img class="header-logo"src="./images/titlelogo.png" alt="">
+    <!-- App Styling -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+          <img class="header-logo"src="./images/titlelogo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html">
+              <i class="fas fa-camera me-2"></i>post
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ms-auto">
-                <a class="nav-link active" aria-current="page" href="./post.html"><i class="fas fa-camera"></i>post</a>
-                <a class="nav-link" href="#">About</a>
-                <a  id="user-container">
-                  <div  hidden id="user-pic" class="user-pic"></div>
-                  <a hidden id="user-name" class="user-name"></a>
-                  <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                    Sign-out
-                  </button>
-                  <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                    <i class="material-icons">account_circle</i>Sign-in with Google
-                  </button>
-                </a>
-                
-              </div>
-              
-            </div>
-          </div>
-        </nav>
-    </header>
-    <!-- <div id="user-container">
-        <div hidden id="user-pic"></div>
-        <div hidden id="user-name"></div>
-        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          Sign-out
-        </button>
-        <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign-in with Google
-        </button>
-      </div> -->
-    <!-- <div class="post-area" id="messages">
-        投稿ページ
-    </div>
-    <div id="mumeisyo">
-    </div> -->
+            <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
+            <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
 
+            <span class="navbar-text">
+              <a class="user-pic" hidden id="user-pic" ></a>
+              <a hidden id="user-name" class="user-name"></a>
+            </span>
+
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <div class="container">
         <form id="mumeisyo-form" action="#">

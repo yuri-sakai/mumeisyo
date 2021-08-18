@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <title>無名所</title>
-        <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021" />
-        <meta name="description" content="どんなサイトなのかの説明" />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/main.css" />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>無名所</title>
+    <meta name="keywords" content="WAV, wav, 卓展, 卓, 卓展2021" />
+    <meta name="description" content="どんなサイトなのかの説明" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-    </head>
+  <body>
+    <header class="header">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+          <img class="header-logo"src="./images/titlelogo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link btn btn-outline-primary" role="button" aria-current="page" href="./post.html">
+              <i class="fas fa-camera me-2"></i>post
+            </a>
+            <a class="nav-link" hidden id="sign-out" href="#">sign-out</a>
+            <a class="nav-link" id="sign-in" href="#">sign-in with Google</a>
 
-    <body>
-      <main class="container">
-            <div id="mumeisyo-detail" class="mumeisyo-detail">
-            </div>
-        
+            <span class="navbar-text">
+              <a class="user-pic" hidden id="user-pic" ></a>
+              <a hidden id="user-name" class="user-name"></a>
+            </span>
 
-      </main>
-      <script src="/__/firebase/8.6.7/firebase-app.js"></script>
-      <script src="/__/firebase/8.6.7/firebase-auth.js"></script>
-      <script src="/__/firebase/8.6.7/firebase-storage.js"></script>
-      <script src="/__/firebase/8.6.7/firebase-messaging.js"></script>
-      <script src="/__/firebase/8.6.7/firebase-firestore.js"></script>
-      <script src="/__/firebase/8.6.7/firebase-performance.js"></script>
-      <script src="/__/firebase/init.js?useEmulator=true"></script>
-      <script src="js/detail.js"></script>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    </body>
+    <main class="container">
+      <div id="mumeisyo-detail" class="mumeisyo-detail">
+      </div>
+    </main>
+
+    <script src="/__/firebase/8.6.7/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-auth.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-storage.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-messaging.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-performance.js"></script>
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
+    <script src="js/detail.js"></script>
+  </body>
 </html>
