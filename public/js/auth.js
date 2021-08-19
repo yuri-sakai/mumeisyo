@@ -56,6 +56,7 @@ function authStateObserver(user) {
     userPicElement.removeAttribute("hidden");
     signOutButtonElement.removeAttribute("hidden");
     postElement.removeAttribute("hidden");
+    postSpElement.removeAttribute("hidden");
 
     // Hide sign-in button.
     signInButtonElement.setAttribute("hidden", "true");
@@ -68,6 +69,7 @@ function authStateObserver(user) {
     userPicElement.setAttribute("hidden", "true");
     signOutButtonElement.setAttribute("hidden", "true");
     postElement.setAttribute("hidden", "true");
+    postSpElement.setAttribute("hidden", "true");
 
     // Show sign-in button.
     signInButtonElement.removeAttribute("hidden");
@@ -119,6 +121,7 @@ var signInSnackbarElement = document.getElementById("must-signin-snackbar");
 var userPicElement = document.getElementById("user-pic");
 var userNameElement = document.getElementById("user-name");
 var postElement = document.getElementById("post");
+var postSpElement = document.getElementById("post-sp");
 signOutButtonElement.addEventListener("click", signOut);
 signInButtonElement.addEventListener("click", signIn);
 initFirebaseAuth();
