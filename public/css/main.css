@@ -18063,6 +18063,10 @@ body {
   color: #eee4e2;
 }
 
+.slick-dots li.slick-active button:before {
+  color: #fcee21;
+}
+
 .header {
   margin-top: 100px;
 }
@@ -18179,14 +18183,9 @@ body {
   padding: 50px 0;
 }
 
-.page-section .rotateLogo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.page-section .rotateLogo-wrapper {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .section-title {

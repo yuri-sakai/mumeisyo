@@ -50,7 +50,6 @@ function loadRecomend() {
             <a href="carddetail.html?photoid=${doc.id}"">
               <img src="${data.imageUrl}" alt="">
             </a>
-            <p>ここから3km</p>
           </div>
           `
         );
@@ -77,7 +76,7 @@ $(function () {
     });
   };
   $(window).scroll(function () {
-    rotate($(".rotateLogo"), $(window).scrollTop() * 0.2);
+    rotate($("#rotateLogo"), $(window).scrollTop() * 0.2);
   });
 });
 
