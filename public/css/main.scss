@@ -5,11 +5,11 @@ $form-label-margin-bottom: 1rem;
 @import "../libs/bootstrap-5.1.0/scss/bootstrap.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/solid.scss";
 @import "../libs/fontawesome-free-5.15.4-web/scss/fontawesome.scss";
-@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap");
 
 $font-color: #eee4e2;
 $font-color-dark: #2e130a;
+$font-color-small: #7e7e8a;
 $background-color: #121330;
 $accent-color: #fcee21;
 
@@ -186,8 +186,12 @@ body {
     }
     p.map-post {
       font-size: 0.75rem;
-      padding-top: 5px;
+      padding-top: 10px;
       margin-bottom: -20px;
+      color: $font-color-small;
+      i {
+        margin-right: 10px;
+      }
     }
   }
 }
